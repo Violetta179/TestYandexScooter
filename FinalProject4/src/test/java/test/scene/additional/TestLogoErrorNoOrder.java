@@ -22,9 +22,13 @@ public class TestLogoErrorNoOrder  {
     @Before
     public void Driver()
     {
+        // создали драйвер - OK
         driver = new ChromeDriver();
+        // инициализировали и сразу открыли хост в браузере
         pageOrder = new PageOrder(driver);
+        // инициализировали и снова открыли в браузере
         mainPageScooter = new MainPageScooter(driver);
+        // третий раз открыли страницу
         pageTrack = new PageTrack(driver);
     }
 

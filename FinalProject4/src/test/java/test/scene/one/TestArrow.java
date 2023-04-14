@@ -7,18 +7,19 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import test.pages.MainPageScooter;
+import test.scene.BaseTest;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TestArrow {
-    private WebDriver driver;
+public class TestArrow extends BaseTest {
     private MainPageScooter mainPageScooter;
 
     @Before
-    public void  setUp()
+    public void setUp()
     {
-        driver = new ChromeDriver();
         mainPageScooter = new MainPageScooter(driver);
+        // открываем страницу перед каждым тестом здесь
+        driver.get(host);
     }
 
     @Test
@@ -32,8 +33,4 @@ public class TestArrow {
         }
     }
 
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
 }
