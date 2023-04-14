@@ -14,7 +14,9 @@ public class MainPageScooter extends LocatorsMainPage {
     final String host="https://qa-scooter.praktikum-services.ru/";
     public MainPageScooter(WebDriver driver) {
         this.driver = driver;
+        // Думаю, что открывать страницу здесь излишне (см. пояснение в TestLogoErrorNoOrder)
         driver.get(host);
+        // Лучше задавать это свойство где-нибудь перед созданием драйвера (см. пример с новым классом BaseTest и TestArrow)
         System.setProperty("webdriver.chrome.driver", "chromedriver");
     }
     public void acceptCookies()
